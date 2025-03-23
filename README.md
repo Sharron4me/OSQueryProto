@@ -23,7 +23,7 @@ A lightweight Go service that collects system information using osquery, stores 
 - osquery (macOS/Windows)
 
 ## Start Database Container
-```bash
+``` bash
 docker-compose up -d
 ```
 - docker-compose.yml
@@ -57,16 +57,16 @@ volumes:
   docker-compose up -d
 
   ## Login to Docker container
-    ```bash
+    ``` bash
         docker exec -it <container_name> bash
     ```
   ## Login to SQL CLI
-    ```bash
+    ``` bash
       mysql -u <username> -p -h 127.0.0.1 osquery_db
       #ENTER PASSWORD HERE
     ```  
   ## Create a database 
-    ```SQL
+    ``` SQL
      CREATE DATABASE osquery_db 
     ```
   ## Start the Go service
@@ -80,7 +80,7 @@ volumes:
   GET /latest_data_table	HTML Dashboard
   
   Example JSON Response:
-  ```JSON
+  ``` JSON
   {
     "os_name": "macOS",
     "os_version": "14.5",
@@ -101,7 +101,7 @@ volumes:
   Returns the most recent system snapshot in JSON format.
   
   Response Schema:
-  ```bash
+  ``` bash
   {
     "os_name": "string",
     "os_version": "string",
