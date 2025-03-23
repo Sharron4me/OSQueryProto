@@ -26,7 +26,7 @@ A lightweight Go service that collects system information using osquery, stores 
 ```bash
 docker-compose up -d
 ```
-<details> <summary><strong>View <code>docker-compose.yml</code></strong></summary>
+- docker-compose.yml
 ``` bash
   version: '3.8'
 services:
