@@ -55,8 +55,9 @@ volumes:
 
 # Starting The service
   ## Ensure database is running
-  docker-compose up -d
-
+  ``` bash
+    docker-compose up -d
+  ```
   ## Login to Docker container
   
   ``` bash
