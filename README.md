@@ -22,10 +22,13 @@ A lightweight Go service that collects system information using osquery, stores 
 - Go 1.20+
 - osquery (macOS/Windows)
 
-Start Database Container
+## Start Database Container
+```bash
 docker-compose up -d
+```
 <details> <summary><strong>View <code>docker-compose.yml</code></strong></summary>
-version: '3.8'
+``` bash
+  version: '3.8'
 services:
   mysql:
     image: mysql:8.0
@@ -40,15 +43,16 @@ services:
       - mysql_data:/var/lib/mysql
 volumes:
   mysql_data:
-</details>
-Install Dependencies
-go mod download
-Configure Osquery (macOS)
-Open System Preferences → Security & Privacy → Privacy
-Enable Full Disk Access for:
-Your terminal application (Terminal/iTerm2)
-osqueryi (usually located at /usr/local/bin/osqueryi)
-Usage
+```
+## Install Dependencies
+  - go mod download
+  - Configure Osquery (macOS)
+  - Open System Preferences → Security & Privacy → Privacy
+  - Enable Full Disk Access for:
+  Your terminal application (Terminal/iTerm2)
+  osqueryi (usually located at /usr/local/bin/osqueryi)
+
+##Usage
 
 Start the Service
 # Ensure database is running
@@ -75,8 +79,11 @@ go run main.go
 # API Documentation
 
   GET /latest_data
+  
   Returns the most recent system snapshot in JSON format.
+  
   Response Schema:
+  ```bash
   {
     "os_name": "string",
     "os_version": "string",
@@ -84,4 +91,4 @@ go run main.go
     "installed_apps": ["string"],
     "created_at": "ISO8601 timestamp"
   }
-s is a minimal viable product (MVP) for demonstration purposes.
+```
