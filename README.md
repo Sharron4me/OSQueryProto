@@ -52,14 +52,27 @@ volumes:
   Your terminal application (Terminal/iTerm2)
   osqueryi (usually located at /usr/local/bin/osqueryi)
 
-##Usage
+# Starting The service
+  ## Ensure database is running
+  docker-compose up -d
 
-Start the Service
-# Ensure database is running
-docker-compose up -d
-
-# Start the Go service
-go run main.go
+  ## Login to Docker container
+    ```bash
+        docker exec -it <container_name> bash
+    ```
+  ## Login to SQL CLI
+    ```bash
+      mysql -u <username> -p -h 127.0.0.1 osquery_db
+      #ENTER PASSWORD HERE
+    ```  
+  ## Create a database 
+    ```SQL
+     CREATE DATABASE osquery_db 
+    ```
+  ## Start the Go service
+    ```bash
+      go run main.go
+    ```
 # Endpoint	Description
 
   GET /latest_data	JSON API Response
@@ -67,7 +80,7 @@ go run main.go
   GET /latest_data_table	HTML Dashboard
   
   Example JSON Response:
-  ```bash
+  ```JSON
   {
     "os_name": "macOS",
     "os_version": "14.5",
