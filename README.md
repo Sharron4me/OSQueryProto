@@ -19,16 +19,5 @@ A lightweight Go service that collects system information using osquery, stores 
 - **Automatic Data Collection on Service Startup**
 
 ## Prerequisites
-
-- Docker Desktop
 - Go 1.20+
 - osquery (macOS/Windows)
-- Basic command-line knowledge
-
-## Installation
-
-1. **Clone Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/osquery-data-collector.git
-   cd osquery-data-collector
