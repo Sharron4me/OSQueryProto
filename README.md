@@ -75,13 +75,6 @@ volumes:
   ```bash
     go run main.go
   ```
-# Endpoint	Description
-
-  GET /latest_data	JSON API Response
-  
-  GET /latest_data_table	HTML Dashboard
-  
-
 # API Documentation
 
   ## GET /latest_data
