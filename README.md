@@ -81,24 +81,10 @@ volumes:
   
   GET /latest_data_table	HTML Dashboard
   
-  Example JSON Response:
-  ``` JSON
-  {
-    "os_name": "macOS",
-    "os_version": "14.5",
-    "osquery_version": "5.10.2",
-    "installed_apps": [
-      "Google Chrome",
-      "Visual Studio Code",
-      "Docker Desktop"
-    ],
-    "created_at": "2025-03-24T09:15:32-07:00"
-  }
-```
 
 # API Documentation
 
-  GET /latest_data
+  ## GET /latest_data
   
   Returns the most recent system snapshot in JSON format.
   
@@ -111,4 +97,25 @@ volumes:
     "installed_apps": ["string"],
     "created_at": "ISO8601 timestamp"
   }
-```
+  ```
+  Usage:
+  ``` bash
+      curl http://localhost:8080/latest_data                              
+  ```
+
+  Example JSON Response:
+  ``` JSON
+    {
+      "os_name": "macOS",
+      "os_version": "14.5",
+      "osquery_version": "5.10.2",
+      "installed_apps": [
+        "Google Chrome",
+        "Visual Studio Code",
+        "Docker Desktop"
+      ],
+      "created_at": "2025-03-24T09:15:32-07:00"
+    }
+  ```
+  ## GET /latest_data_table
+  Returns the same data as above in a tabular format. 
