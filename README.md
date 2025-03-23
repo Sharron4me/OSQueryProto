@@ -61,9 +61,13 @@ docker-compose up -d
 # Start the Go service
 go run main.go
 # Endpoint	Description
+
   GET /latest_data	JSON API Response
+  
   GET /latest_data_table	HTML Dashboard
+  
   Example JSON Response:
+  ```bash
   {
     "os_name": "macOS",
     "os_version": "14.5",
@@ -75,6 +79,7 @@ go run main.go
     ],
     "created_at": "2025-03-24T09:15:32-07:00"
   }
+```
 
 # API Documentation
 
