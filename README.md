@@ -27,6 +27,7 @@ A lightweight Go service that collects system information using osquery, stores 
 docker-compose up -d
 ```
 - docker-compose.yml
+
 ``` bash
   version: '3.8'
 services:
@@ -57,22 +58,23 @@ volumes:
   docker-compose up -d
 
   ## Login to Docker container
-    ``` bash
-        docker exec -it <container_name> bash
-    ```
+  
+  ``` bash
+      docker exec -it <container_name> bash
+  ```
   ## Login to SQL CLI
-    ``` bash
+  ``` bash
       mysql -u <username> -p -h 127.0.0.1 osquery_db
       #ENTER PASSWORD HERE
-    ```  
+  ```  
   ## Create a database 
-    ``` SQL
+  ``` SQL
      CREATE DATABASE osquery_db 
-    ```
+  ```
   ## Start the Go service
-    ```bash
-      go run main.go
-    ```
+  ```bash
+    go run main.go
+  ```
 # Endpoint	Description
 
   GET /latest_data	JSON API Response
